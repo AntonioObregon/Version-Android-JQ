@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8">
+function onBodyLoad() {
+document.addEventListener("deviceready", onDeviceReady,
+false);
+}
+function onDeviceReady() {
+//Get the appInfo DOM element
+var element = document.getElementById('appInfo');
+//replace it with specific information about the device
+//running the application
+element.innerHTML = 'PhoneGap version: ' + device.cordova + '<br />'+
+'Plataforma: '+ device.platform +'<br />'+ 
+'Modelo: '+device.model +'<br />'+ 
+ 'Version SO: ' + device.version + '<br />'+
+ 'Plataforma: '+device.platform+ '<br />'+
+ 'UUID: '+device.uuid + '<br />'+
+ 'Fabricante: ' +device.manufacturer+ '<br />'+
+ '¿Es virtualizado?: '+device.isVirtual+ '<br />'+
+ 'No. Serie: '+device.serial;
+}
+</script>
+</head>
+<body onload="onBodyLoad()">
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<h1>Version Android JQuery</h1>
+</div>
+<div data-role="content">
+<p style="font-size:25px;">Esta aplicación muestra información nativa del dispositivo</p>
+<p id="appInfo" style="font-size:20px;">En espera de la inicialización</p>
+</div>
+<div data-role="footer" data-position="fixed">
+<h1>Esenciales Cordova</h1>
+</div>
+</div>
+</body>
+</html>
